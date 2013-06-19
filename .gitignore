@@ -1,4 +1,13 @@
+build.output.folder/
+target/
+lib/
+classes/
+
 *.class
+*.asc
+*.jar
+*.zip
+*.gz
 *.log
 
 # sbt specific
@@ -11,3 +20,11 @@ project/plugins/project/
 
 # Scala-IDE specific
 .scala_dependencies
+
+
+._.DS_Store
+.DS_Store
+.svn
+
+
+
