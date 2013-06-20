@@ -21,12 +21,17 @@
 
 package com.zotoh.frwk.util
 
+import scala.collection.JavaConversions._
 import org.slf4j._
 
 object CoreUtils {
   
   private val _log= LoggerFactory.getLogger(classOf[CoreUtils])
   
+  def main(args:Array[String]) {
+    println(shuffle(""))
+  }
+
   def using[A <: {def close(): Unit}, B](param: A)(f: A => B): B = {
     try {
       f(param)
@@ -64,6 +69,12 @@ object CoreUtils {
   
   def nsb(x:Any) = if (x==null) "" else x.toString()
   
+  def shuffle(s:String) = {
+    val lst= new java.util.ArrayList(s.toCharArray.toSeq)
+    java.util.Collections.shuffle(lst)
+    new String(lst.toList.toArray[Char])    
+  }
+    
 }
 
 sealed class CoreUtils {}
