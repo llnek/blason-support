@@ -29,7 +29,7 @@ object CoreUtils {
   private val _log= LoggerFactory.getLogger(classOf[CoreUtils])
   
   def main(args:Array[String]) {
-    println(shuffle(""))
+    println(shuffle("0123456789AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz"))
   }
 
   def using[A <: {def close(): Unit}, B](param: A)(f: A => B): B = {

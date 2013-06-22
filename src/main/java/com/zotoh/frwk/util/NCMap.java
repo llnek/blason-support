@@ -32,7 +32,7 @@ import java.util.TreeMap;
  * @param <T>
  */
 public class NCMap<T> extends TreeMap<String, T> implements java.io.Serializable {
-
+  
   private static final long serialVersionUID = -3637175588593032279L;
 
   public NCMap()    {
