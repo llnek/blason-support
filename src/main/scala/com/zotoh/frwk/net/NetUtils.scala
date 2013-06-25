@@ -22,7 +22,7 @@
 package com.zotoh.frwk.net
 
 import org.jboss.netty.channel.ChannelFutureListener
-import org.jboss.netty.channel.ChannelFuture
+import org.jboss.netty.channel.{ChannelFuture,Channel}
 import org.jboss.netty.buffer.ChannelBuffer
 import java.io.{OutputStream}
 import org.slf4j._
