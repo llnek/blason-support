@@ -15,21 +15,28 @@
   </appender>
   <appender name="DISK" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <!--See also http://logback.qos.ch/manual/appenders.html#RollingFileAppender-->
-    <File>./logs/blason.log</File>
+    <File>/tmp/z.log</File>
     <Append>true</Append>
     <encoder>
       <pattern>[%d{ISO8601} (%-5p)] %x %m%n</pattern>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
       <maxIndex>2</maxIndex>
-      <FileNamePattern>./logs/blason.log.%i</FileNamePattern>
+      <FileNamePattern>/tmp/z.log.%i</FileNamePattern>
     </rollingPolicy>
     <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-      <MaxFileSize>4MB</MaxFileSize>
+      <MaxFileSize>1MB</MaxFileSize>
     </triggeringPolicy>
   </appender>
+
+  <logger name="org.jboss" level="DEBUG" >
+    <appender-ref ref="STDOUT"/>
+    <appender-ref ref="DISK"/>
+  </logger>
+
   <root level="DEBUG">
     <appender-ref ref="STDOUT"/>
     <appender-ref ref="DISK"/>
   </root>
+
 </configuration>
