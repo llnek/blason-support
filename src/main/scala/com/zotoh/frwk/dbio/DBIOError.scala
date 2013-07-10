@@ -46,3 +46,14 @@ class DBIOError(msg:String, t:Throwable) extends SQLException(msg,t) {
 
 }
 
+@SerialVersionUID(143241635256073760L)
+class OptLockError(op:String, table:String, rowID:Long) extends 
+SQLException(
+"Possible Optimistic lock failure for table: " +
+               table +
+               ", rowid= " + rowID  + " during " + op, null) {
+}
+
+
+
+
