@@ -74,7 +74,13 @@ object CoreUtils {
     java.util.Collections.shuffle(lst)
     new String(lst.toList.toArray[Char])    
   }
-    
+ 
+  def blockForever() {
+    while (true) tryc { () =>
+      Thread.sleep(8000)
+    }
+  }
+  
 }
 
 sealed class CoreUtils {}

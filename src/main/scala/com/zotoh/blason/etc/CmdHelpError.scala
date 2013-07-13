@@ -26,5 +26,5 @@ package com.zotoh.blason.etc
  *
  */
 @SerialVersionUID( -3243333353892471139L)
-class CmdHelpError extends Exception {
+class CmdHelpError(msg:String="") extends Exception(msg) {
 }
