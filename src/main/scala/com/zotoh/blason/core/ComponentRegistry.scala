@@ -1,5 +1,5 @@
 /*??
- * COPYRIGHT (C) 2012-2013 CHERIMOIA LLC. ALL RIGHTS RESERVED.
+ * COPYRIGHT (C) 2013 CHERIMOIA LLC. ALL RIGHTS RESERVED.
  *
  * THIS IS FREE SOFTWARE; YOU CAN REDISTRIBUTE IT AND/OR
  * MODIFY IT UNDER THE TERMS OF THE APACHE LICENSE,
@@ -19,17 +19,22 @@
  *
  ??*/
 
-package com.zotoh.blason.etc
+package com.zotoh.blason.core
 
 /**
  * @author kenl
- *
  */
-@SerialVersionUID( -3243333353892471139L)
-class CmdHelpError(msg:String) extends Exception(msg) {
+trait ComponentRegistry  {
+
+  def hasComponent( name:String): Boolean
   
-  def this() {
-    this("")
-  }
-  
+  def lookup( name:String): Component
+
+  def release( c:Component): Unit
+
+  def add(c:Component): Unit
+
+  def getParent() : ComponentRegistry
+
 }
+

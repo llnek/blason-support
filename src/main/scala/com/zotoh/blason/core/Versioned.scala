@@ -1,5 +1,5 @@
 /*??
- * COPYRIGHT (C) 2012-2013 CHERIMOIA LLC. ALL RIGHTS RESERVED.
+ * COPYRIGHT (C) 2013 CHERIMOIA LLC. ALL RIGHTS RESERVED.
  *
  * THIS IS FREE SOFTWARE; YOU CAN REDISTRIBUTE IT AND/OR
  * MODIFY IT UNDER THE TERMS OF THE APACHE LICENSE,
@@ -19,17 +19,11 @@
  *
  ??*/
 
-package com.zotoh.blason.etc
+package com.zotoh.blason.core
 
 /**
  * @author kenl
- *
  */
-@SerialVersionUID( -3243333353892471139L)
-class CmdHelpError(msg:String) extends Exception(msg) {
-  
-  def this() {
-    this("")
-  }
-  
+trait Versioned {
+  def getVersion(): String
 }
