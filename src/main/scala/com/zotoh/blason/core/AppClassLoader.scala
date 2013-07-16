@@ -36,10 +36,6 @@ import Constants._
 class AppClassLoader(par:RootClassLoader) extends AbstractClassLoader(par) {
 
   def configure(appDir:String) {
-    load( appDir)
-  }
-
-  private def load(appDir:String) {
     val c= new File(appDir, POD_CLASSES)
     val p= new File(appDir, POD_PATCH)
     val b= new File(appDir, POD_LIB)
