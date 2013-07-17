@@ -23,6 +23,10 @@ package com.zotoh.frwk.util
 
 import scala.collection.JavaConversions._
 import org.slf4j._
+import java.io.File
+import org.apache.commons.io.FileUtils
+import org.json.JSONObject
+import org.json.JSONTokener
 
 object CoreUtils {
   
@@ -81,6 +85,10 @@ object CoreUtils {
     }
   }
   
+  def readJson(f:File) : JSONObject = readJson( FileUtils.readFileToString(f, "utf-8"))
+  
+  def readJson(s:String) : JSONObject = new JSONObject( new JSONTokener(s))
+      
 }
 
 sealed class CoreUtils {}
